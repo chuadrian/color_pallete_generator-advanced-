@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Color Palette Generator</h1>
+        <div class="controls">
+          <div class="control-group">
+            <label for="paletteSize">Colors:</label>
+            <input type="number" id="paletteSize" min="2" max="10" value="5">
+          </div>
+          <div class="control-group">
+            <label for="lockMode">Lock Mode:</label>
+            <select id="lockMode">
+              <option value="none">None</option>
+              <option value="analogous">Analogous</option>
+              <option value="monochromatic">Monochromatic</option>
+              <option value="complementary">Complementary</option>
+            </select>
+          </div>
+          <button id="generate">Generate New Palette</button>
+          <button id="save">Save Palette</button>
+        </div>
+        <div class="palette-container"></div>
+        <p>Click any color to copy its hex code. Click 🔒 to lock a color.</p>
+        <div class="format-options">
+          <button data-format="hex" class="active">HEX</button>
+          <button data-format="rgb">RGB</button>
+          <button data-format="hsl">HSL</button>
+        </div>
+        <div class="saved-palettes">
+          <h2>Saved Palettes</h2>
+          <div class="saved-palettes-container"></div>
+        </div>
+        <div class="copied-toast">Color copied to clipboard!</div>
+      </div>
+      <script src="js/utils.js"></script>
+      <script src="js/colorGenerator.js"></script>
+      <script src="js/colorConverter.js"></script>
+      <script src="js/uiManager.js"></script>
+      <script src="js/app.js"></script>
+</body>
+</html>
